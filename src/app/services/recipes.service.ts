@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+const testEndpoint = 'http://localhost:5000/recipes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesService {
+  endpoint = testEndpoint;
 
-  endpoints = {
-    meal: 'https://www.themealdb.com/api/json/v1/1/search.php?s=',
-    drink: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
+  constructor(private http: HttpClient) { }
+
+  getRecipes() {
+    return this.http.get(this.endpoint);
   }
-
-  constructor() { }
 }
