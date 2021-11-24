@@ -1,0 +1,6 @@
+<div *ngIf="recipes.drinks">
+  <p *ngFor="let recipe of recipes.drinks">{{ recipe.strDrink }}</p>
+</div>
+<div *ngIf="recipes.meals">
+  <p *ngFor="let recipe of recipes.meals">{{ recipe.strMeal }}</p>
+</div>
