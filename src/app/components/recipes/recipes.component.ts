@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
@@ -12,11 +12,16 @@ export class RecipesComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     if (this.route.snapshot.children[0].url.join('') === 'meals') {
       this.title = 'Meals';
     } else {
       this.title = 'Drinks';
     }
+  }
+
+  changeTitle(title: string) {
+    this.title = title;
   }
 
 }

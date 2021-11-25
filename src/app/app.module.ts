@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipesTableComponent } from './components/recipes/recipes-table/recipes-table.component';
+import { RecipeDetailsComponent } from './components/recipes/recipe-details/recipe-details.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { RecipesTableComponent } from './components/recipes/recipes-table/recipe
     LandingComponent,
     RecipesComponent,
     RecipesTableComponent,
+    RecipeDetailsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<div *ngIf="recipe.meal">
+  <h3>{{ recipe.meal?.strMeal }}</h3>
+  <p>Ingredients</p>
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      {{ ingredient.name }} {{ ingredient.measure }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="recipe.drink">
+  <h3>{{ recipe.drink?.strDrink }}</h3>
+  <p>Ingredients</p>
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      {{ ingredient.name }} {{ ingredient.measure }}
+    </li>
+  </ul>
+</div>

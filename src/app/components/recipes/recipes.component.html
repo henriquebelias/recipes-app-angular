@@ -1,4 +1,23 @@
-<div class="text-center">
+<header class="text-center">
   <h1>{{ title }}</h1>
-</div>
+  <nav>
+    <button
+      class="btn rounded"
+      routerLinkActive="btn-primary"
+      [routerLink]="['..', 'recipes', 'meals']"
+      (click)="changeTitle('Meals')"
+    >
+      Meals
+    </button>
+    <button
+      class="btn rounded"
+      routerLinkActive="btn-primary"
+      [routerLink]="['..', 'recipes', 'drinks']"
+      (click)="changeTitle('Drinks')"
+    >
+      Drinks
+    </button>
+  </nav>
+
+</header>
 <router-outlet></router-outlet>
