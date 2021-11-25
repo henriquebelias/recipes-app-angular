@@ -16,7 +16,8 @@ export class RecipesTableComponent implements OnInit {
 
   ngOnInit(): void {
     // const type = this.route.snapshot.routeConfig?.path;
-    this.recipesSvc.getRecipes().subscribe((response) => {
+    this.recipesSvc.getRecipes();
+    this.recipesSvc.recipesSub.subscribe((response) => {
       if (this.route.snapshot.routeConfig?.path === 'meals') {
         this.recipes.meals = response.meals;
       } else {

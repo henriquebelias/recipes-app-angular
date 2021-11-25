@@ -16,17 +16,17 @@ export class RecipeDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private recipesSvc: RecipesService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
-    this.recipesSvc.getRecipes().subscribe((response) => {
-      if (this.route.snapshot.routeConfig?.path === 'recipes/meals/:id') {
-        this.recipe.meal = response.meals.find((recipe) => recipe.idMeal === id);
-        this.ingredients = this.getIngredients(this.recipe.meal!);
-      } else {
-        this.recipe.drink = response.drinks.find((recipe) => recipe.idDrink === id);
-        this.ingredients = this.getIngredients(this.recipe.drink!);
+    // const id = this.route.snapshot.params['id'];
+    // this.recipesSvc.getRecipes().subscribe((response) => {
+    //   if (this.route.snapshot.routeConfig?.path === 'recipes/meals/:id') {
+    //     this.recipe.meal = response.meals.find((recipe) => recipe.idMeal === id);
+    //     this.ingredients = this.getIngredients(this.recipe.meal!);
+    //   } else {
+    //     this.recipe.drink = response.drinks.find((recipe) => recipe.idDrink === id);
+    //     this.ingredients = this.getIngredients(this.recipe.drink!);
 
-      }
-    });
+    //   }
+    // });
   }
 
   getIngredients(recipe: Meal | Drink) {

@@ -13,7 +13,29 @@ export const randomRecipeUrls = {
   drinks: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 }
 
-export const ingredientsUrls = {
-  meals: 'https://www.themealdb.com/api/json/v1/1/list.php?i=list',
-  drinks: 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+export const searchUrls = {
+  options: (radioValue: string, inputValue: string) => {
+    let type = 'i';
+    let searchParam = 'search';
+    switch (radioValue) {
+      case 'ingredient':
+        searchParam = 'filter';
+        break;
+      case 'name':
+        type = 's';
+        break;
+      case 'firstLetter':
+        type = 'f';
+        break;
+    }
+    return { type, searchParam, inputValue };
+  },
+  meals: (radioValue: string, inputVal: string) => {
+    const { type, searchParam, inputValue } = searchUrls.options(radioValue, inputVal);
+    return `https://www.themealdb.com/api/json/v1/1/${searchParam}.php?${type}=${inputValue}`;
+  },
+  drinks: (radioValue: string, inputVal: string) => {
+    const { type, searchParam, inputValue } = searchUrls.options(radioValue, inputVal);
+    return `https://www.thecocktaildb.com/api/json/v1/1/${searchParam}.php?${type}=${inputValue}`;
+  },
 }

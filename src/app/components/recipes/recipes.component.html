@@ -17,7 +17,15 @@
     >
       Drinks
     </button>
+    <button
+      class="btn rounded"
+      [ngClass]="{ 'btn-success': !showSearchBar, 'btn-danger': showSearchBar }"
+      type="button"
+      (click)="toggleSearchBar()"
+    >
+      {{ !showSearchBar ? 'Search' : 'Close' }}
+    </button>
   </nav>
-
 </header>
+<app-search-bar *ngIf="showSearchBar"></app-search-bar>
 <router-outlet></router-outlet>

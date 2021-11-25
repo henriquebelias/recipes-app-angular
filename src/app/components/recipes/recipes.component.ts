@@ -8,11 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipesComponent implements OnInit {
   title?: string;
+  showSearchBar = false;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
     if (this.route.snapshot.children[0].url.join('') === 'meals') {
       this.title = 'Meals';
     } else {
@@ -22,6 +22,10 @@ export class RecipesComponent implements OnInit {
 
   changeTitle(title: string) {
     this.title = title;
+  }
+
+  toggleSearchBar() {
+    this.showSearchBar = !this.showSearchBar;
   }
 
 }

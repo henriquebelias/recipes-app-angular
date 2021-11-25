@@ -10,6 +10,7 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipesTableComponent } from './components/recipes/recipes-table/recipes-table.component';
 import { RecipeDetailsComponent } from './components/recipes/recipe-details/recipe-details.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
     RecipesTableComponent,
     RecipeDetailsComponent,
     HeaderComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
