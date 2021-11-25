@@ -1,17 +1,17 @@
 export const basicUrls = {
   meals: 'https://www.themealdb.com/api/json/v1/1/search.php?s=',
   drinks: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
-}
+};
 
 export const categoriesUrls = {
   meals: 'https://www.themealdb.com/api/json/v1/1/list.php?c=list',
   drinks: 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list'
-}
+};
 
 export const randomRecipeUrls = {
   meals: 'https://www.themealdb.com/api/json/v1/1/random.php',
   drinks: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
-}
+};
 
 export const searchUrls = {
   options: (radioValue: string, inputValue: string) => {
@@ -38,4 +38,9 @@ export const searchUrls = {
     const { type, searchParam, inputValue } = searchUrls.options(radioValue, inputVal);
     return `https://www.thecocktaildb.com/api/json/v1/1/${searchParam}.php?${type}=${inputValue}`;
   },
-}
+};
+
+export const detailsUrl = {
+  meals: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=',
+  drinks: 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=',
+};
