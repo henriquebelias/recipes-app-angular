@@ -1,0 +1,31 @@
+<header class="text-center">
+  <h1>{{ title }}</h1>
+  <nav>
+    <button
+      class="btn rounded"
+      routerLinkActive="btn-primary"
+      [routerLink]="['..', 'recipes', 'meals']"
+      (click)="changeTitle('Meals')"
+    >
+      Meals
+    </button>
+    <button
+      class="btn rounded"
+      routerLinkActive="btn-primary"
+      [routerLink]="['..', 'recipes', 'drinks']"
+      (click)="changeTitle('Drinks')"
+    >
+      Drinks
+    </button>
+    <button
+      class="btn rounded"
+      [ngClass]="{ 'btn-success': !showSearchBar, 'btn-danger': showSearchBar }"
+      type="button"
+      (click)="toggleSearchBar()"
+    >
+      {{ !showSearchBar ? 'Search' : 'Close' }}
+    </button>
+  </nav>
+</header>
+<app-search-bar *ngIf="showSearchBar"></app-search-bar>
+<router-outlet></router-outlet>

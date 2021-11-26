@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LandingComponent } from './components/landing/landing.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipesTableComponent } from './components/recipes/recipes-table/recipes-table.component';
+import { RecipeDetailsComponent } from './components/recipes/recipe-details/recipe-details.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingComponent,
+    RecipesComponent,
+    RecipesTableComponent,
+    RecipeDetailsComponent,
+    HeaderComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

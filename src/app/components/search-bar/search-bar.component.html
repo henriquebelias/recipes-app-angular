@@ -1,0 +1,23 @@
+<form class="container col-lg-4" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="search-input">Search Recipe</label>
+    <input
+    class="form-control"
+    type="text"
+    id="search-input"
+    formControlName="searchInput"
+    />
+  </div>
+  <div class="radio" *ngFor="let option of searchOptions">
+    <label>
+      <input
+        type="radio"
+        formControlName="searchOption"
+        [value]="option.value"
+      />
+      {{ option.label }}
+    </label>
+  </div>
+  <button class="btn btn-success" type="submit">SUBMIT</button>
+  <button class="btn btn-danger" type="button" (click)="searchForm.reset()">RESET</button>
+</form>
