@@ -1,14 +1,13 @@
 export interface Meal {
   idMeal: string,
   strMeal: string,
+  strDrinkAlternate?: string,
   strCategory: string,
   strArea: string,
   strInstructions: string,
   strMealThumb: string,
   strTags: string,
   strYouTube: string,
-  strSouce: string,
-  strDrinkAlternate?: string,
   strIngredient1?: string,
   strIngredient2?: string,
   strIngredient3?: string,
@@ -49,4 +48,5 @@ export interface Meal {
   strMeasure18?: string,
   strMeasure19?: string,
   strMeasure20?: string,
+  strSource: string,
 }
