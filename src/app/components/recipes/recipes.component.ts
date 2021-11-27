@@ -22,6 +22,7 @@ export class RecipesComponent implements OnInit {
 
   changeTitle(title: string) {
     this.title = title;
+    this.showSearchBar = false;
   }
 
   toggleSearchBar() {

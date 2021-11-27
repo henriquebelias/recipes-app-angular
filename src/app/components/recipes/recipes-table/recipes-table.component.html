@@ -1,21 +1,10 @@
-<div class="col-lg-8 container recipe-grid" *ngIf="recipes.drinks">
+<div class="col-lg-8 container recipe-grid" *ngIf="recipes">
   <div
     class="recipe-item text-center"
-    *ngFor="let recipe of recipes.drinks"
-    [routerLink]="recipe.idDrink"
+    *ngFor="let recipe of recipes"
+    [routerLink]="recipe.id"
   >
-    <p>{{ recipe.strDrink }}</p>
-    <img class="img-thumbnail" [src]="recipe.strDrinkThumb" [alt]="recipe.strDrink">
-  </div>
-</div>
-
-<div class="col-lg-8 container recipe-grid" *ngIf="recipes.meals">
-  <div
-    class="recipe-item text-center"
-    *ngFor="let recipe of recipes.meals"
-    [routerLink]="recipe.idMeal"
-  >
-    <p>{{ recipe.strMeal }}</p>
-    <img class="img-thumbnail" [src]="recipe.strMealThumb" alt="">
+    <img class="img-thumbnail" [src]="recipe.thumbnail" [alt]="recipe.title">
+    <p>{{ recipe.title }}</p>
   </div>
 </div>

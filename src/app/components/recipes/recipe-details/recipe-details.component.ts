@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Drink } from 'src/app/models/Drink';
 import { Meal } from 'src/app/models/Meal';
+import { Recipe } from 'src/app/models/Recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
+import { drinkObjFormatter, mealObjFormatter } from 'src/app/utils/objFormatter';
 
 @Component({
   selector: 'app-recipe-details',
@@ -10,7 +12,7 @@ import { RecipesService } from 'src/app/services/recipes.service';
   styleUrls: ['./recipe-details.component.scss']
 })
 export class RecipeDetailsComponent implements OnInit {
-  recipe: { meal?: Meal, drink?: Drink} = {};
+  recipe?: Recipe;
   ingredients?: { name: string, measure: string }[];
 
   constructor(private route: ActivatedRoute, private recipesSvc: RecipesService) { }
@@ -19,19 +21,19 @@ export class RecipeDetailsComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     if (this.route.snapshot.routeConfig?.path === 'recipes/meals/:id') {
       this.recipesSvc.getDetails('meals', +id).subscribe((response) => {
-        this.recipe.meal = response.meals[0];
-        this.ingredients = this.getIngredients(this.recipe.meal);
+        this.recipe = mealObjFormatter(response.meals[0]);
+        this.ingredients = this.getIngredients(response.meals[0]);
       });
     } else {
       this.recipesSvc.getDetails('drinks', +id).subscribe((response) => {
-        this.recipe.drink = response.drinks[0];
-        this.ingredients = this.getIngredients(this.recipe.drink);
+        this.recipe = drinkObjFormatter(response.drinks[0]);
+        this.ingredients = this.getIngredients(response.drinks[0]);
       });
     }
   }
 
   getIngredients(recipe: Meal | Drink) {
-    const ingredients: [string, any][] = Object.entries(recipe).filter(
+    const ingredients: [string, string][] = Object.entries(recipe).filter(
       (details) => {
         const condition1 = details[0].includes('Ingredient');
         const condition2 = details[1] !== '' && details[1] !== null;
