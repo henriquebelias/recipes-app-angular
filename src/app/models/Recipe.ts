@@ -1,0 +1,15 @@
+export interface Recipe {
+  id: string,
+  title: string,
+  drinkAlternate?: string,
+  category: string,
+  area?: string,
+  instructions: string,
+  thumbnail: string,
+  tags?: string,
+  video?: string,
+  source?: string,
+  iba?: string,
+  alcoholic?: string,
+  glass?: string,
+}

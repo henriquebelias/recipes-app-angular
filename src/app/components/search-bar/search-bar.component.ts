@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Drink } from 'src/app/models/Drink';
-import { Meal } from 'src/app/models/Meal';
 import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
@@ -16,8 +14,7 @@ export class SearchBarComponent implements OnInit {
     {label: 'Name', value: 'name'},
     {label: 'First Letter', value:'firstLetter'},
   ];
-  recipes: { meals?: Meal[], drinks?: Drink[] } = {};
-  type: string | undefined;
+  type?: string;
 
   searchForm = this.fb.group({
     searchInput: [null],
