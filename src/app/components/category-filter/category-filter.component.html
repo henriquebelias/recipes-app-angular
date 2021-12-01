@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <select class="form-select col" name="category-filter" #categorySelect>
+      <option value="all">All</option>
+      <option *ngFor="let category of categories" [value]="category.value">{{ category.name }}</option>
+    </select>
+    <button class="btn btn-secondary col" type="button" (click)="getRecipesByCategory()">Filter</button>
+  </div>
+</div>

@@ -44,3 +44,8 @@ export const detailsUrl = {
   meals: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=',
   drinks: 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=',
 };
+
+export const byCategoryUrl = {
+  meals: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=',
+  drinks: 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c='
+};
