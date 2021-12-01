@@ -1,15 +1,26 @@
 <button class="btn btn-primary" routerLink="..">GO BACK</button>
 
 <div class="text-center container" *ngIf="recipe?.title">
-  <img class="img-thumbnail" [src]="recipe?.thumbnail" [alt]="recipe?.title">
-  <h2>{{ recipe?.title }}</h2>
-  <h4>{{ recipe?.area }}</h4>
-  <h5>{{ recipe?.category }}</h5>
-  <h6>{{ recipe?.alcoholic }}</h6>
-  <p>Ingredients</p>
-  <ul class="list-group">
-    <li class="list-group-item col-lg-4 align-self-center" *ngFor="let ingredient of ingredients">
-      {{ ingredient.name }} {{ ingredient.measure }}
-    </li>
-  </ul>
+
+  <div class="row">
+
+    <div class="col-4">
+      <img class="img-thumbnail" [src]="recipe?.thumbnail" [alt]="recipe?.title">
+    </div>
+
+    <div class="col-8">
+      <h2>{{ recipe?.title }}</h2>
+      <h4>{{ recipe?.area }}</h4>
+      <h5>{{ recipe?.category }}</h5>
+      <h6>{{ recipe?.alcoholic }}</h6>
+      <p>Ingredients</p>
+      <ul class="list-group">
+        <li class="list-group-item col-lg-12 align-self-center" *ngFor="let ingredient of ingredients">
+          {{ ingredient.name }} {{ ingredient.measure }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
 </div>
