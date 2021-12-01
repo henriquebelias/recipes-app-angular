@@ -11,6 +11,7 @@ import { RecipesTableComponent } from './components/recipes/recipes-table/recipe
 import { RecipeDetailsComponent } from './components/recipes/recipe-details/recipe-details.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     RecipeDetailsComponent,
     HeaderComponent,
     SearchBarComponent,
+    CategoryFilterComponent
   ],
   imports: [
     BrowserModule,

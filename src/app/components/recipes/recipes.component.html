@@ -28,4 +28,5 @@
   </nav>
 </header>
 <app-search-bar *ngIf="showSearchBar"></app-search-bar>
+<app-category-filter [type]="title?.toLowerCase()"></app-category-filter>
 <router-outlet></router-outlet>
