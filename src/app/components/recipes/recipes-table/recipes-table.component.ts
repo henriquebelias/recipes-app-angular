@@ -15,7 +15,7 @@ export class RecipesTableComponent implements OnInit {
   constructor(private route: ActivatedRoute, private recipesSvc: RecipesService) { }
 
   ngOnInit(): void {
-    this.recipesSvc.getRecipes();
+    this.recipesSvc.getRecipes(this.route.snapshot.routeConfig?.path!);
     this.recipesSvc.recipesSub.subscribe((response) => {
       if (this.route.snapshot.routeConfig?.path === 'meals') {
         this.recipes = response.meals?.map(mealObjFormatter);

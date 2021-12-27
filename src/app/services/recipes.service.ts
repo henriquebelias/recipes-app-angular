@@ -21,7 +21,7 @@ interface CategoriesApiResponse {
   providedIn: 'root'
 })
 export class RecipesService {
-  initialEndpoint = testEndpoint;
+  initialEndpoint = basicUrls;
   searchEndpoint = searchUrls;
   detailsEndpoint = detailsUrl;
   categoriesEndpoint = categoriesUrls;
@@ -30,10 +30,16 @@ export class RecipesService {
 
   constructor(private http: HttpClient) { }
 
-  getRecipes() {
-    this.http.get<ApiResponse>(this.initialEndpoint).subscribe((response) => {
-      this.recipesSub.next(response);
-    });
+  getRecipes(type: string) {
+    if (type === 'meals') {
+      this.http.get<ApiResponse>(this.initialEndpoint.meals).subscribe((response) => {
+        this.recipesSub.next(response);
+      });
+    } else {
+      this.http.get<ApiResponse>(this.initialEndpoint.drinks).subscribe((response) => {
+        this.recipesSub.next(response);
+      });
+    }
   }
 
   searchRecipes(radioValue: string, inputValue: string, type: string) {

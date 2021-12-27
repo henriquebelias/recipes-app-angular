@@ -51,7 +51,7 @@ export class CategoryFilterComponent implements OnInit, OnChanges {
   getRecipesByCategory() {
     const inputValue = this.categorySelect?.nativeElement.value;
     if (inputValue === 'all') {
-      this.recipeSvc.getRecipes();
+      this.recipeSvc.getRecipes(this.type!);
     } else {
       this.recipeSvc.getRecipesByCategory(this.type!, inputValue);
     }
